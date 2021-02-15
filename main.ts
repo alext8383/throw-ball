@@ -1,7 +1,7 @@
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     ball = sprites.createProjectileFromSprite(img`
-        . . . . . . 7 7 
-        . . . . . . 7 7 
+        . . . . . . 2 2 
+        . . . . . . 2 2 
         . . . . . . . . 
         . . . . . . . . 
         . . . . . . . . 
@@ -12,24 +12,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     pause(200)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
-    mySprite2 = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
+    mySprite2.destroy(effects.spray, 500)
 })
 let ball: Sprite = null
 let mySprite: Sprite = null
